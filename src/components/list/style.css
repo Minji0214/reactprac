@@ -1,0 +1,25 @@
+.listBox{
+    display: flex;
+    align-items: flex-start;
+
+    margin-left: 15px;
+}
+
+.box{
+    background-color: #C7C7AC;
+    border-radius: 7px;
+    border-style: solid;
+    border-color: #555541;
+    padding: 10px;
+    max-width: 10rem;
+    max-height: 30rem;
+    margin: 5px;
+
+}
+.btn{
+    margin: 3px;
+    background-color: #84AF9C;
+}
+.btn:hover{
+    background-color: #FBCEAD;
+}

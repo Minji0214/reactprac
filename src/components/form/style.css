@@ -1,0 +1,23 @@
+.formBox {
+  background-color: #f2b5a7;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+}
+.addBtn {
+  margin-left: 10px;
+  all: unset;
+  border-style: solid;
+  border-color: #f28080;
+  background-color: #f28080;
+  border-width: 1px;
+  border-radius: 5px;
+  padding: 3px;
+  margin: 5px;
+}
+.addBtn:hover {
+  background-color: #f2b5a7;
+}
+.titleBox {
+  margin: 5px;
+}

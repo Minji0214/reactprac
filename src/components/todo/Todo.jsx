@@ -60,7 +60,7 @@ function Working({ todoList, setTodoList, todoDone, setTodoDone }) {
                     let test2 = todoList.filter((y) => {
                       return y.title == x.title;
                     }); //완료만 따로뺌
-                    let copy = [...todoDone];
+                  
                     setTodoDone([...todoDone, ...test2]);
                     console.log("완료");
                     console.log(test2);

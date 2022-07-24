@@ -21,7 +21,6 @@ const TodoList = () => {
       <Form todoList={todoList} setTodoList={setTodoList} />
       <List todoList={todoList} setTodoList={setTodoList} />
 
-      <Todo />
     </>
   );
 };

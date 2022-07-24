@@ -29,7 +29,7 @@ const Form = (props) => {
     ]);
  
   };
-console.log(todoList)
+
   return (
     <>
       <div className="formBox">

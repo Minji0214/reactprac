@@ -9,7 +9,6 @@ const Form = (props) => {
 
   let todoList = props.todoList;
   let setTodoList = props.setTodoList;
- 
 
   //object 최댓값
 
@@ -23,10 +22,10 @@ const Form = (props) => {
     setTodoList([
       ...todoList,
       {
-        id: todoList.length+1,
+        id: todoList[todoList.length - 1].id + 1,
         title: todoTitle,
         body: todo,
-        isDone: false
+        isDone: false,
       },
     ]);
     setTitle("");

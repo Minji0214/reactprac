@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./style.css";
 import List from "../list/List";
 import Todo from "../todo/Todo";
@@ -9,7 +9,7 @@ const Form = (props) => {
 
   let todoList = props.todoList;
   let setTodoList = props.setTodoList;
-  let [todoId, setId] = useState(todoList[todoList.length - 1].id);
+ 
 
   //object 최댓값
 
@@ -23,9 +23,10 @@ const Form = (props) => {
     setTodoList([
       ...todoList,
       {
-        id: todoId + 1,
+        id: todoList.length+1,
         title: todoTitle,
         body: todo,
+        isDone: false
       },
     ]);
     setTitle("");

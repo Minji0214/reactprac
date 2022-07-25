@@ -3,7 +3,7 @@ import "./style.css";
 
 const Todo = ({ todoList, setTodoList, done, todoDone, setTodoDone }) => {
   //완료
-
+  let [몰라2, 몰라2변겅] = useState(false);
   return (
     <>
       {done ? (
@@ -28,11 +28,15 @@ const Todo = ({ todoList, setTodoList, done, todoDone, setTodoDone }) => {
 };
 
 function Working({ todoList, setTodoList, todoDone, setTodoDone }) {
+  let test = todoList.filter((y) => {
+    return y.isDone === false;
+  });
+
   return (
     <>
-      {todoList.map((x, i) => {
+      {test.map((x, i) => {
         return (
-          <Fragment key={x.title}>
+          <Fragment key={x.id}>
             <div className="box">
               <div>
                 <h3>{x.title}</h3>
@@ -56,7 +60,7 @@ function Working({ todoList, setTodoList, todoDone, setTodoDone }) {
                 <button
                   className="btn"
                   onClick={() => {
-                    let test = todoList.filter((y) => {
+                    /*  let test = todoList.filter((y) => {
                       return y.id !== x.id;
                     }); //기본 배열에서 지우고
                     setTodoList(test);
@@ -67,7 +71,18 @@ function Working({ todoList, setTodoList, todoDone, setTodoDone }) {
                     setTodoDone([...todoDone, ...test2]);
                     console.log("완료");
                     console.log(test2);
-                    console.log(todoDone);
+                    console.log(todoDone);*/
+
+                    const 인덱스 = todoList.findIndex(
+                      (element) => element.id === x.id
+                    );
+                    let copy = [...todoList];
+                    copy[인덱스].isDone = true;
+                    setTodoList(copy);
+
+                    /*a.isDone=false
+                    setTodoList(todoList[인덱스]=a)*/
+                    console.log(todoList);
                   }}
                 >
                   {" "}
@@ -83,9 +98,13 @@ function Working({ todoList, setTodoList, todoDone, setTodoDone }) {
 }
 
 function Done({ todoList, setTodoList, todoDone, setTodoDone }) {
+  let test = todoList.filter((y) => {
+    return y.isDone === true;
+  });
+
   return (
     <>
-      {todoDone.map((x, i) => {
+      {test.map((x, i) => {
         return (
           <Fragment key={x.title}>
             <div className="box">
@@ -109,7 +128,7 @@ function Done({ todoList, setTodoList, todoDone, setTodoDone }) {
                 <button
                   className="btn"
                   onClick={() => {
-                    let test = todoDone.filter((y) => {
+                    /*let test = todoDone.filter((y) => {
                       return y.title !== x.title;
                     });
                     setTodoDone(test);
@@ -117,7 +136,13 @@ function Done({ todoList, setTodoList, todoDone, setTodoDone }) {
                       return y.title == x.title;
                     });
                     setTodoList([...test2, ...todoList]);
-                    console.log(test2);
+                    console.log(test2);*/
+                    const 인덱스 = todoList.findIndex(
+                      (element) => element.id === x.id
+                    );
+                    let copy = [...todoList];
+                    copy[인덱스].isDone = false;
+                    setTodoList(copy);
                   }}
                 >
                   취소

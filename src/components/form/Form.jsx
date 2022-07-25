@@ -11,13 +11,10 @@ const Form = (props) => {
   let setTodoList = props.setTodoList;
   let [todoId, setId] = useState(todoList[todoList.length - 1].id);
 
-//object 최댓값
-
-
+  //object 최댓값
 
   const inputTitle = (e) => {
     setTitle(e.target.value);
-   
   };
   const inputTodo = (e) => {
     setTodo(e.target.value);
@@ -26,12 +23,13 @@ const Form = (props) => {
     setTodoList([
       ...todoList,
       {
-        id: todoId+1,
+        id: todoId + 1,
         title: todoTitle,
         body: todo,
       },
     ]);
- 
+    setTitle("");
+    setTodo("");
   };
 
   return (
@@ -39,12 +37,12 @@ const Form = (props) => {
       <div className="formBox">
         <div className="titleBox">
           <span>제목</span>
-          <input onChange={inputTitle}  type="text" />
+          <input onChange={inputTitle} value={todoTitle} type="text" />
         </div>
 
         <div>
           <span>내용</span>
-          <input onChange={inputTodo} type="text" />
+          <input onChange={inputTodo} value={todo} type="text" />
           <button onClick={onClick} className="addBtn">
             추가하기
           </button>

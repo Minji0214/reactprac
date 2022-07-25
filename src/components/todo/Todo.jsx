@@ -1,9 +1,9 @@
 import React, { Fragment, useEffect, useState } from "react";
 import "./style.css";
 
-const Todo = ({ todoList, setTodoList, done, todoDone,setTodoDone}) => {
+const Todo = ({ todoList, setTodoList, done, todoDone, setTodoDone }) => {
   //완료
-  
+
   return (
     <>
       {done ? (
@@ -46,6 +46,9 @@ function Working({ todoList, setTodoList, todoDone, setTodoDone }) {
                       return y.id !== x.id;
                     });
                     setTodoList(test);
+                    if (todoList.length === 0) {
+                      alert("모두 완료하였습니다.");
+                    }
                   }}
                 >
                   삭제
@@ -60,7 +63,7 @@ function Working({ todoList, setTodoList, todoDone, setTodoDone }) {
                     let test2 = todoList.filter((y) => {
                       return y.title == x.title;
                     }); //완료만 따로뺌
-                  
+
                     setTodoDone([...todoDone, ...test2]);
                     console.log("완료");
                     console.log(test2);

@@ -116,11 +116,10 @@ function Done({ todoList, setTodoList, todoDone, setTodoDone }) {
                 <button
                   className="btn"
                   onClick={() => {
-                    let test = todoDone.filter((y) => {
-                      return y.title !== x.title;
+                    let test3 = todoList.filter((y) => {
+                      return y.id !== x.id;
                     });
-                    setTodoDone(test);
-                    console.log(test);
+                    setTodoList(test3);
                   }}
                 >
                   삭제

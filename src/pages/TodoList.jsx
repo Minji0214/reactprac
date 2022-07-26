@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import Layout from "../components/layout/Layout";
 import Header from "../components/header/Header";
 import Form from "../components/form/Form";
 import List from "../components/list/List";
 import Todo from "../components/todo/Todo";
+import { ThemeContext } from "../ThemeContext";
 
 const TodoList = () => {
   let [todoList, setTodoList] = useState([
@@ -15,13 +16,15 @@ const TodoList = () => {
 
   return (
     <>
+
       <Layout>
         <Header />
+        <ThemeContext.Provider value={{todoList, setTodoList}}>
+      <Form />
+      <List />
+      </ThemeContext.Provider>
       </Layout>
-
-      <Form todoList={todoList} setTodoList={setTodoList} />
-      <List todoList={todoList} setTodoList={setTodoList} />
-
+     
     </>
   );
 };

@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import "./style.css";
-import List from "../list/List";
-import Todo from "../todo/Todo";
+import { ThemeContext } from "../../ThemeContext";
 
-const Form = (props) => {
+
+
+const Form = () => {
   let [todoTitle, setTitle] = useState("");
   let [todo, setTodo] = useState("");
-
-  let todoList = props.todoList;
-  let setTodoList = props.setTodoList;
+  const {todoList,setTodoList} = useContext(ThemeContext)
 
   //object 최댓값
 

@@ -1,6 +1,6 @@
-# 리액트로 투두리스트 만들기 
+ 
 
-이 프로젝트는 리액트를 연습하기 위해 만든 프로젝트로 일반버전, useContext버전, Redux toolkit버전으로 나뉘어 있습니다. 
+
 
 ## Available Scripts
 
